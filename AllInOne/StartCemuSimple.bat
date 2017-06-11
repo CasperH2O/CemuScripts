@@ -4,7 +4,7 @@ REM Define file names and locations using relative paths.
 SET "cemu_file_name=Cemu.exe"
 SET "cemu_location=..\..\cemu-180b"
 SET "game=U-King.rpx"
-SET "game_location=game\00050000101C9500-120\code" REM Relative to Cemu location!
+SET "game_location=..\game\00050000101C9500-120\code" REM Relative to Cemu location!
 set "work_directory=%~dp0"
 
 REM Change to directory of bash file it self, needed when run as admin
@@ -21,7 +21,7 @@ if "%ERRORLEVEL%"=="0" (
 :start
 
 REM Start cemu with specified game and full screen option.
-start %cemu_location%\%cemu_file_name% -g ..\%game_location%\%game% -f
+start %cemu_location%\%cemu_file_name% -g "%game_location%\%game%" -f
 
 REM Check every 5 seconds if Cemu has crashed
 REM by checking for the WerFault application.

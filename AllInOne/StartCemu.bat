@@ -6,13 +6,12 @@ SET "cemu_location=..\..\cemu-180b"
 SET "speedhack_file_name=SuperSpeedHack25.EXE"
 SET "speedhack_location=..\..\AutoSpeedHackBetterDefaults"
 SET "game=U-King.rpx"
-SET "game_location=game\00050000101C9500-120\code" REM Relative to Cemu location!
+SET "game_location=..\game\00050000101C9500-120\code" REM Relative to Cemu location!
 SET "backup_location=..\..\Saves-Backup"
 SET "seven_zip_location=C:\Program Files\7-Zip\7z.exe"
-set "work_directory=%~dp0"
 
 REM Change to directory of bash file it self, needed when run as admin
-cd %work_directory%
+pushd %~dp0
 
 REM Check if Cemu is already running, if yes, inform user and exit after timeout
 tasklist /FI "IMAGENAME eq %cemu_file_name%" 2>NUL | find /I /N "%cemu_file_name%">NUL
@@ -52,7 +51,7 @@ if NOT "%ERRORLEVEL%"=="0" (
 TIMEOUT 1
 
 REM Start cemu with specified game and full screen option.
-start %cemu_location%\%cemu_file_name% -g ..\%game_location%\%game% -f
+start %cemu_location%\%cemu_file_name% -g "%game_location%\%game%" -f
 
 REM Timeout to handle Super Speed Hack only working once game is loaded.
 REM Give Cemu time to start and load cache.
@@ -60,7 +59,7 @@ TIMEOUT 25
 
 REM Start speed hack application with precompiled desired values:
 REM Target: 24, Min 1 Max 2.
-start %speedhack_location%\SuperSpeedHack25.EXE
+start %speedhack_location%\%speedhack_file_name%
 
 REM Check every second if the SuperSpeedHack has started, 
 REM so the active screen can be set to Cemu.
@@ -69,7 +68,7 @@ REM so the active screen can be set to Cemu.
 
 TIMEOUT 2
 
-tasklist /FI "IMAGENAME eq SuperSpeedHack25.EXE" 2>NUL | find /I /N "SuperSpeedHack25.EXE">NUL
+tasklist /FI "IMAGENAME eq %speedhack_file_name%" 2>NUL | find /I /N "%speedhack_file_name%">NUL
 if "%ERRORLEVEL%"=="0" (
     REM Small time delay to allow the actual GUI to show.
     TIMEOUT 5
