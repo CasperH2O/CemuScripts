@@ -8,6 +8,7 @@ SET "speedhack_location=..\..\AutoSpeedHackBetterDefaults"
 SET "game=U-King.rpx"
 SET "game_location=game\00050000101C9500-120\code" REM Relative to Cemu location!
 SET "backup_location=..\..\Saves-Backup"
+SET "seven_zip_location=C:\Program Files\7-Zip\7z.exe"
 set "work_directory=%~dp0"
 
 REM Change to directory of bash file it self, needed when run as admin
@@ -36,9 +37,17 @@ set "Min=%dt:~10,2%"
 set "Sec=%dt:~12,2%"
 
 set "fullstamp=%YYYY%%MM%%DD%-%HH%%Min%%Sec%"
-echo Creating back up folder: %fullstamp%
-md "%backup_location%\%fullstamp%"
-xcopy /E "%cemu_location%\mlc01\emulatorSave" "%backup_location%\%fullstamp%"  
+
+REM Create 7z file of all Cemu saves at ultra compress level
+"%seven_zip_location%" a "%backup_location%\%fullstamp%.7z" "%cemu_location%\mlc01\emulatorSave\*" -mx=9
+
+REM In case 7z returns error (for ex. not installed), simply copy files.
+if NOT "%ERRORLEVEL%"=="0" (
+    echo 7zip did not work, copying folder instead.
+    echo Creating back up folder: %fullstamp%
+    md "%backup_location%\%fullstamp%"
+    xcopy /E "%cemu_location%\mlc01\emulatorSave" "%backup_location%\%fullstamp%"
+)
 
 TIMEOUT 1
 
