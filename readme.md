@@ -22,7 +22,7 @@ This script does the following:
 - Check if Cemu is running, if yes, informs user, does nothing and exits
 - Starts Cemu full screen with specified game.
 - Checks if Cemu has crashed, every 5 seconds, if yes, restarts it.
-- In cae Cemu has been closed, the script is also closed.
+- In case Cemu has been closed, the script is also closed.
 
 Side note, this one can be run as a regular user.
 
@@ -44,4 +44,5 @@ The script uses and starts several items:
 - Cemu [link](http://cemu.info/)
 - Super Speedhack [link](https://www.reddit.com/r/cemu/comments/63jqmi/super_speedhack_dynamic_speedhack_for_cemu/)
 - sendKeys.bat [link](https://github.com/npocmaka/batch.scripts/blob/master/hybrids/jscript/sendKeys.bat)
+- 7zip for backup/archiving [link](http://www.7-zip.org/)
 - Some code examples taken from stack overflow.
