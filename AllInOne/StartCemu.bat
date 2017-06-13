@@ -27,15 +27,15 @@ REM Make back up before start
 REM Get current date and time
 for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
 
-set "YY=%dt:~2,2%"
-set "YYYY=%dt:~0,4%"
-set "MM=%dt:~4,2%"
-set "DD=%dt:~6,2%"
-set "HH=%dt:~8,2%"
-set "Min=%dt:~10,2%"
-set "Sec=%dt:~12,2%"
+SET "YY=%dt:~2,2%"
+SET "YYYY=%dt:~0,4%"
+SET "MM=%dt:~4,2%"
+SET "DD=%dt:~6,2%"
+SET "HH=%dt:~8,2%"
+SET "Min=%dt:~10,2%"
+SET "Sec=%dt:~12,2%"
 
-set "fullstamp=%YYYY%%MM%%DD%-%HH%%Min%%Sec%"
+SET "fullstamp=%YYYY%%MM%%DD%-%HH%%Min%%Sec%"
 
 REM Create 7z file of all Cemu saves at ultra compress level
 "%seven_zip_location%" a "%backup_location%\%fullstamp%.7z" "%cemu_location%\mlc01\emulatorSave\*" -mx=9
