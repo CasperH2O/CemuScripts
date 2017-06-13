@@ -5,10 +5,9 @@ SET "cemu_file_name=Cemu.exe"
 SET "cemu_location=..\..\cemu-180b"
 SET "game=U-King.rpx"
 SET "game_location=..\game\00050000101C9500-120\code" REM Relative to Cemu location!
-set "work_directory=%~dp0"
 
 REM Change to directory of bash file it self, needed when run as admin
-cd %work_directory%
+pushd %~dp0
 
 REM Check if Cemu is already running, if yes, inform user and exit after timeout
 tasklist /FI "IMAGENAME eq %cemu_file_name%" 2>NUL | find /I /N "%cemu_file_name%">NUL
