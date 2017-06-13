@@ -21,7 +21,7 @@ if "%ERRORLEVEL%"=="0" (
 :start
 
 REM Start cemu with specified game and full screen option.
-start %cemu_location%\%cemu_file_name% -g "%game_location%\%game%" -f
+start "" "%cemu_location%\%cemu_file_name%" -g "%game_location%\%game%" -f
 
 REM Check every 5 seconds if Cemu has crashed
 REM by checking for the WerFault application.

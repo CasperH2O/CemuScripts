@@ -51,7 +51,7 @@ if NOT "%ERRORLEVEL%"=="0" (
 TIMEOUT 1
 
 REM Start cemu with specified game and full screen option.
-start %cemu_location%\%cemu_file_name% -g "%game_location%\%game%" -f
+start "" "%cemu_location%\%cemu_file_name%" -g "%game_location%\%game%" -f
 
 REM Timeout to handle Super Speed Hack only working once game is loaded.
 REM Give Cemu time to start and load cache.
@@ -59,7 +59,7 @@ TIMEOUT 25
 
 REM Start speed hack application with precompiled desired values:
 REM Target: 24, Min 1 Max 2.
-start %speedhack_location%\%speedhack_file_name%
+start "" "%speedhack_location%\%speedhack_file_name%"
 
 REM Check every second if the SuperSpeedHack has started, 
 REM so the active screen can be set to Cemu.
