@@ -1,7 +1,7 @@
 @echo off
 
 REM Define file names and locations using relative paths.
-SET "cemu_file_name=Cemu.exe"
+SET "cemu_file_name=Cemu.exe" REM This normally does not have to be changed.
 SET "cemu_location=..\..\cemu-180b"
 SET "game=U-King.rpx"
 SET "game_location=..\game\00050000101C9500-120\code" REM Relative to Cemu location!
@@ -38,7 +38,7 @@ if "%ERRORLEVEL%"=="0" (
     REM Force stop the three applications
     taskkill /IM WerFault.exe /f
     taskkill /IM %cemu_file_name% /f
-    echo Restarting Cemu with BOTW
+    echo Restarting Cemu with game.
     TIMEOUT 1
     goto :start
 )

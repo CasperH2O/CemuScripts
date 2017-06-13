@@ -16,6 +16,8 @@ There are two main scripts in the AllInOne folder, a regular one and a simple on
 
 Detection of crash is done by detecting that the Windows program WerFault.exe is running. 
 
+For working result, these scripts have to be run as administrator. Otherwise certain applications don't allow themselves to be stopped and remain open. Obviously first check the script if nothing nasty happens, you are responsible for your own machine!
+
 ### StartCemuSimple.bat
 
 This script does the following:
@@ -23,8 +25,6 @@ This script does the following:
 - Starts Cemu full screen with specified game.
 - Checks if Cemu has crashed, every 5 seconds, if yes, restarts it.
 - In case Cemu has been closed, the script is also closed.
-
-Side note, this one can be run as a regular user.
 
 ### StartCemu.bat
 
@@ -34,9 +34,7 @@ Side note, this one can be run as a regular user.
 - After a timeout (game has been loaded in Cemu), starts the SuperSpeedHack application.
 - Checks that that SuperSpeedHack application has been started properly, focusses window on Cemu.
 - Checks if Cemu has crashed, every 5 seconds, if yes, restarts everything from the start.
-- In cae Cemu has been closed, the script is also closed.
-
-Side note, for best result, this has to be run as administrator. Otherwise certain applications don't allow themselves to be stopped and remain open.
+- In case Cemu has been closed, the script is also closed.
 
 ## Extra, third party and credits.
 

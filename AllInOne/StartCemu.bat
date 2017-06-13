@@ -1,7 +1,7 @@
 @echo off
 
 REM Define file names and locations using relative paths.
-SET "cemu_file_name=cemu.exe"
+SET "cemu_file_name=Cemu.exe" REM This normally does not have to be changed.
 SET "cemu_location=..\..\cemu-180b"
 SET "speedhack_file_name=SuperSpeedHack25.EXE"
 SET "speedhack_location=..\..\AutoSpeedHackBetterDefaults"
@@ -98,7 +98,7 @@ if "%ERRORLEVEL%"=="0" (
     taskkill /IM WerFault.exe /f
     taskkill /IM %cemu_file_name% /f
     taskkill /IM %speedhack_file_name% /f
-    echo Restarting Cemu with BOTW
+    echo Restarting Cemu with game.
     TIMEOUT 1
     goto :start
 )
