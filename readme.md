@@ -36,6 +36,14 @@ This script does the following:
 - Checks if Cemu has crashed, every 5 seconds, if yes, restarts everything from the start.
 - In case Cemu has been closed, the script is also closed.
 
+## Examples
+
+Below animated gif illustrates the StartCemuSimple.bat script. It is a screencast 
+saved as gif, certain parts have been cut out to speed up video and keep 
+file size low (~9 Mb).
+
+![alt text](https://user-images.githubusercontent.com/14330834/27198329-0288353e-5212-11e7-85c5-5d4a12576d24.gif)
+
 ## Extra, third party and credits.
 
 The script uses and starts several items:
