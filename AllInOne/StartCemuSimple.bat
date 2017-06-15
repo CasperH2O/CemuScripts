@@ -22,6 +22,9 @@ if "%ERRORLEVEL%"=="0" (
 REM Start cemu with specified game and full screen option.
 start "" "%cemu_location%\%cemu_file_name%" -g "%game_location%\%game%" -f
 
+REM Move mouse to bottom right corner
+RunDll32.exe user32.dll,SetCursorPos
+
 REM Check every 5 seconds if Cemu has crashed
 REM by checking for the WerFault application.
 REM Note that this could cause trouble if a 

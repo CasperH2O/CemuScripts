@@ -53,6 +53,9 @@ TIMEOUT 1
 REM Start cemu with specified game and full screen option.
 start "" "%cemu_location%\%cemu_file_name%" -g "%game_location%\%game%" -f
 
+REM Move mouse to bottom right corner
+RunDll32.exe user32.dll,SetCursorPos
+
 REM Timeout to handle Super Speed Hack only working once game is loaded.
 REM Give Cemu time to start and load cache.
 TIMEOUT 25
