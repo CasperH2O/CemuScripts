@@ -40,7 +40,7 @@ This script does the following:
 
 Below animated gif illustrates the StartCemuSimple.bat script. It is a screencast 
 saved as gif, certain parts have been cut out to speed up video and keep 
-file size low (~9 Mb).
+file size low (~3 Mb).
 
 ![alt text](https://user-images.githubusercontent.com/14330834/27199469-624ba948-5216-11e7-8d71-c5a982989c18.gif)
 
