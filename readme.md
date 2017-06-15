@@ -42,7 +42,7 @@ Below animated gif illustrates the StartCemuSimple.bat script. It is a screencas
 saved as gif, certain parts have been cut out to speed up video and keep 
 file size low (~9 Mb).
 
-![alt text](https://user-images.githubusercontent.com/14330834/27198329-0288353e-5212-11e7-85c5-5d4a12576d24.gif)
+![alt text](https://user-images.githubusercontent.com/14330834/27199469-624ba948-5216-11e7-8d71-c5a982989c18.gif)
 
 ## Extra, third party and credits.
 
