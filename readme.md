@@ -44,6 +44,8 @@ file size low (~3 Mb).
 
 ![alt text](https://user-images.githubusercontent.com/14330834/27199469-624ba948-5216-11e7-8d71-c5a982989c18.gif)
 
+![alt text](https://github.com/CasperH2O/CemuScripts/blob/master/Examples/StartCemuSimple-CrashRestart.webm?raw=true)
+
 ## Extra, third party and credits.
 
 The script uses and starts several items:
